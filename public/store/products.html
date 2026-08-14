@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop All Electronics — Filter by Brand, Price &amp; Rating | Voltra</title>
+    <meta name="description" content="Browse every Voltra product with live filters for brand, category, price, rating, discount and availability." />
+    <meta property="og:title" content="Shop All Electronics | Voltra" />
+    <meta property="og:description" content="Filter phones, laptops, audio and gaming gear by brand, price, rating and discount." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="page container" style="padding-top: 24px">
+      <div id="listing-head"></div>
+      <div class="layout-sidebar">
+        <aside class="card card--pad filters" id="filters"></aside>
+        <div>
+          <div class="row row--between row--wrap" style="margin-bottom: 16px">
+            <span class="muted small" id="result-count"></span>
+            <div class="row">
+              <label class="muted small" for="sort">Sort</label>
+              <select class="select" id="sort" style="width: auto">
+                <option value="relevance">Relevance</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+                <option value="rating">Top rated</option>
+                <option value="discount">Biggest discount</option>
+                <option value="newest">Newest first</option>
+                <option value="popular">Most reviewed</option>
+              </select>
+            </div>
+          </div>
+          <div class="row row--wrap" id="active-chips" style="margin-bottom: 14px"></div>
+          <div class="grid" id="results"></div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="js/pages/products.js"></script>
+  </body>
+</html>
