@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secure Checkout — Address &amp; Payment | Voltra</title>
+    <meta name="description" content="Add your delivery address, pick a payment method and place your Voltra order in two steps." />
+    <meta property="og:title" content="Secure Checkout | Voltra" />
+    <meta property="og:description" content="Delivery address, payment method and order summary in one clean flow." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="page container" style="padding-top: 24px">
+      <div id="checkout-head"></div>
+      <div class="steps" id="steps" style="margin-bottom: 20px"></div>
+      <div class="layout-split">
+        <div class="stack" id="checkout-body"></div>
+        <aside class="card card--pad summary" id="checkout-summary"></aside>
+      </div>
+    </main>
+    <script type="module" src="js/pages/checkout.js"></script>
+  </body>
+</html>
