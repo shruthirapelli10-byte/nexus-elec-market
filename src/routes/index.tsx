@@ -1,24 +1,41 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+/**
+ * The storefront is a standalone HTML/CSS/JS app served from /store/.
+ * This route just forwards visitors from "/" to it.
+ */
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Voltra — Premium Electronics Store, Delivered Fast" },
+      {
+        name: "description",
+        content:
+          "Shop flagship smartphones, laptops, audio, gaming and accessories at Voltra with flash deals and fast delivery.",
+      },
+      { property: "og:title", content: "Voltra — Premium Electronics Store" },
+      {
+        property: "og:description",
+        content: "Flagship phones, laptops, audio and gaming gear with flash deals and fast delivery.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useEffect(() => {
+    window.location.replace("/store/index.html");
+  }, []);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="flex min-h-screen items-center justify-center bg-background">
+      <a className="text-sm font-medium text-primary underline" href="/store/index.html">
+        Opening the Voltra store…
+      </a>
     </div>
   );
 }
